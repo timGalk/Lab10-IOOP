@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class Main {
+public class MainMovie {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
 
         GsonBuilder gsonBuilder = new GsonBuilder();
