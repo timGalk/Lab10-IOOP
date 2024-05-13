@@ -38,14 +38,6 @@ public class Student {
         this.courses = courses;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", major='" + major + '\'' +
-                ", courses=" + courses +
-                '}';
-    }
 
     public static double calculateAverageGrade(Student student) {
         double totalGrade = 0;
