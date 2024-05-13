@@ -8,20 +8,24 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MainStudent{
 
     public static void main(String[] args) throws IOException {
 
         String filename = "src/main/java/edu/io/students.json";
-        // parser
+
         List<Student> students = parserofinfo(filename);
         for (Student student : students) {
-            System.out.println(student.getName());
+            System.out.println(student.getName() + " Average grade" + student.calculateAverageGrade());
         }
+
+        //Sorting
+        Student theBest = theBestStudent(students);
+
+        System.out.println("The best student: " + theBest.getName());
+
 
 
     }
@@ -37,44 +41,21 @@ public class MainStudent{
             fr.close();
             return students;
 
-
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
 
     }
+    public static Student theBestStudent(List<Student> students) {
+        Collections.sort(students);
+        return students.get(0);
 
-//    public static List<Student> readStudentsFromFile(String fileName) {
-//        try (FileReader reader = new FileReader(fileName)) {
-//            Gson gson = new Gson();
-//            List<Student> students = gson.fromJson(reader, new ArrayList<Student>().getClass());
-//            return students;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
+        }
+    }
 
-//    public static void printAverageGrades(List<Student> students) {
-//        for (Student student : students) {
-//            double averageGrade = student.calculateAverageGrade(student);
-//            System.out.println(student.getName() + " - Average Grade: " + averageGrade);
-//        }
-//    }
 
-//    public static double calculateAverageGrade(Student student) {
-//        double totalGrade = 0;
-//        for (Course course : student.getCourses()) {
-//            totalGrade += course.getCourseGrade();
-//        }
-//        return totalGrade / student.getCourses().size();
-//    }
 
-//    public static Student findHighestAverage(List<Student> students) {
-//        return students.stream().max(Comparator.comparingDouble(Student::calculateAverageGrade));
-//    }
-}
 
 
 

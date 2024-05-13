@@ -1,8 +1,9 @@
 package edu.io;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements Comparable<Student> {
 
     private String name;
     private String major;
@@ -39,11 +40,23 @@ public class Student {
     }
 
 
-    public static double calculateAverageGrade(Student student) {
+    public double calculateAverageGrade(){
+        List<Course> courses = getCourses();
         double totalGrade = 0;
-        for (Course course : student.getCourses()) {
+        for (Course course : getCourses()) {
             totalGrade += course.getCourseGrade();
         }
-        return totalGrade / student.getCourses().size();
+        return totalGrade /courses.size();
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if (this.calculateAverageGrade() < o.calculateAverageGrade()) {
+            return 1;
+        } else if (this.calculateAverageGrade() > o.calculateAverageGrade()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
