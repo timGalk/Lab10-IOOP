@@ -38,6 +38,5 @@ public class MainMovie {
         System.out.println(moviePOTCJson);
 
 
-
     }
 }

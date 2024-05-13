@@ -17,4 +17,12 @@ public class Course {
         return courseGrade;
     }
 
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setCourseGrade(double courseGrade) {
+        this.courseGrade = courseGrade;
+    }
+
 }

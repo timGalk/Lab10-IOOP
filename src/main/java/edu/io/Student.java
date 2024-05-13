@@ -25,4 +25,33 @@ public class Student {
     public List<Course> getCourses() {
         return courses;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", major='" + major + '\'' +
+                ", courses=" + courses +
+                '}';
+    }
+
+    public static double calculateAverageGrade(Student student) {
+        double totalGrade = 0;
+        for (Course course : student.getCourses()) {
+            totalGrade += course.getCourseGrade();
+        }
+        return totalGrade / student.getCourses().size();
+    }
 }
