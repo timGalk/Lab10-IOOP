@@ -15,8 +15,6 @@ This repository contains the implementation of a lab using the Gson library for 
   - [Task 2: JSON Deserialization](#task-2-json-deserialization)
   - [Task 3: API Call](#task-3-api-call)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
