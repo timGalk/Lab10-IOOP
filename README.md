@@ -25,7 +25,7 @@ This repository contains the implementation of a lab using the Gson library for 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/gson-lab.git
+    git clone https://github.com/timGalk/Lab10-IOOP.git
     ```
 2. Navigate to the project directory:
     ```sh
@@ -36,15 +36,16 @@ This repository contains the implementation of a lab using the Gson library for 
     For Maven:
     ```xml
     <dependency>
-        <groupId>com.google.code.gson</groupId>
-        <artifactId>gson</artifactId>
-        <version>2.8.8</version>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.11.0</version>
     </dependency>
+
     ```
 
     For Gradle:
     ```gradle
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.11.0'
     ```
 
 ## Tasks
